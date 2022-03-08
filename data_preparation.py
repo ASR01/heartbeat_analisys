@@ -1,4 +1,3 @@
-import copy
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -6,13 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 from sklearn.model_selection import train_test_split
 import torch
-from torch import nn, optim
-from tqdm import tqdm
 
 import torch.nn.functional as F
-import torchinfo
-
-from model import CNN_Heart
 
 sns.set(style='whitegrid', palette='muted', font_scale=1.2)
 
