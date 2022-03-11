@@ -19,11 +19,16 @@ https://www.kaggle.com/rkuo2000/ecg-classification
 
 ## Data Check
 
-We check the data that is available. We can see that the most of the data is of normal and therefore the model will be inbalanced. We will try with this dataset if necessary I will enhance the data.
+We check the data that is available. We can see that the most of the data is of normal and therefore the model will be inbalanced and the model will tend to consider abnormal heartbeats as normal. Because my target in this exercise is to use 1-D CNN I will obviate this. 
+
+Actually the imbalance is so big that I would personally try to develop two models, one taht detects the anomaly. And otehr one taht detects the type of anomaly.  
+
+
+Otehr 
 
 ![](images/Targets.png)
 
-If analised all the signal with the variande and the mean, we can see that there are differencen among them.
+If analised all the signal with the variance and the mean, we can see that there are differences among them, and enought to be able to detect the abnormal beats.
 
 ![](images/Means.png)
 
@@ -42,7 +47,7 @@ After training for 30 epochs, we can see that the Validation loss is stabiliced 
 
 The overall accuracy is over 97%. But we have to look between the lines.
 
-There is a 2% of hearbeats with problems that are classified as normal when they are not. 
+There is a 2% of hearbeats with problems that are classified as normal when they are not, probably an effect of the inbalances datases. In a case like this the values are not good.
 
 But digging deep in the data there are in two categories 25% with abnormal hertbeat classified as normal.
 
@@ -54,4 +59,4 @@ But digging deep in the data there are in two categories 25% with abnormal hertb
 |Fusion ventricular and normal (3) |62.02% |13.18% |25.58%|
 |Unclassificable (4) | 96.05% |4.25% |3.17%|
 
-The purpose of this exercise was for me to learn how it is possible to use 1-D COnvolutional Networks to identify anomalies or for classification.
+The purpose of this exercise was for me to learn how it is possible to use 1-D COnvolutional Networks to identify anomalies or for classification, so as I said before I will improve the models with balancing the data and creating 2 models out of it, if I have time to do so.

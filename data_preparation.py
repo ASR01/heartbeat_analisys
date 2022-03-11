@@ -90,7 +90,7 @@ plt.show()
 
 
 # Check if the values are normalized
-train.describe().iloc[7,:187].max()
+print(train.describe().iloc[7,:187].max())
 
 train_df, test_df = train_test_split( train, test_size=0.20, random_state=random_seed)
 train_df.head()
